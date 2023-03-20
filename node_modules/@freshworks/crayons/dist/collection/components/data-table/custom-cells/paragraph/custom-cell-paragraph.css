@@ -1,0 +1,37 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+.paragraph-container {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.paragraph-container .paragraph-text {
+  overflow: hidden;
+  margin: 0px;
+}
+
+.paragraph-container .paragraph-text.expanded {
+  display: inline;
+}
+
+.paragraph-container .paragraph-toggle {
+  display: inline;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  color: #2c5cc5;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.paragraph-container .paragraph-toggle:hover, .paragraph-container .paragraph-toggle:focus {
+  cursor: pointer;
+}

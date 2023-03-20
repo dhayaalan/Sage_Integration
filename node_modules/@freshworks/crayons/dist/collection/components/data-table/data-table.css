@@ -1,0 +1,517 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+}
+
+div.fw-data-table-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  min-width: 100%;
+  width: max-content;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead {
+  position: sticky;
+  inset-block-start: 0;
+  width: 100%;
+  border-radius: 4px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th {
+  color: #475867;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 12px 8px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-overflow: ellipsis;
+  text-align: start;
+  z-index: 1;
+  box-sizing: border-box;
+  min-width: 40px;
+  max-width: 1000px;
+  background: #f5f7f9;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th:first-of-type {
+  padding-inline-start: 16px;
+  border-end-start-radius: 0px;
+  border-end-end-radius: 0px;
+  border-start-end-radius: 0px;
+  border-start-start-radius: 4px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th:last-of-type {
+  padding-inline-end: 16px;
+  border-end-start-radius: 0px;
+  border-end-end-radius: 0px;
+  border-start-end-radius: 4px;
+  border-start-start-radius: 0px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th.data-grid-sm {
+  padding: 4px 8px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th.data-grid-md {
+  padding: 12px 8px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th.data-grid-lg {
+  padding: 16px 8px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table thead tr th.hidden {
+  display: none;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody {
+  width: 100%;
+  background: #fff;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr {
+  width: 100%;
+  border-block-end: 1px solid #ebeff3;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr:hover, div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr:focus {
+  background: #f5f7f9;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr.active {
+  background: #e5f2fd;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr:last-child {
+  border-block-end: 0px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td {
+  color: #12344d;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 12px 8px;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+  z-index: 0;
+  height: 64px;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.data-grid-checkbox {
+  text-align: center;
+  width: 20px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.data-grid-sm {
+  padding: 4px 8px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.data-grid-md {
+  padding: 12px 8px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.data-grid-lg {
+  padding: 16px 8px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td:first-child {
+  padding-inline-start: 16px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td:last-child {
+  padding-inline-end: 16px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.row-actions {
+  width: 1px;
+  white-space: nowrap;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.row-actions fw-button {
+  margin-inline-end: 5px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.row-actions fw-tooltip:last-child fw-button {
+  margin-inline-end: 0px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr td.hidden {
+  display: none;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr.loading {
+  cursor: not-allowed;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr.loading td {
+  position: relative;
+  opacity: 0.65;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody tr.loading td::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 0px;
+  inset-inline-start: 0px;
+  inset-block-end: 0px;
+  inset-inline-end: 0px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table tbody fw-skeleton {
+  display: block;
+  height: 10px;
+  padding-inline: 0px;
+  padding-block: 4px;
+  box-sizing: content-box;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table.is-selectable td:first-child,
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table.is-selectable th:first-child {
+  text-align: center;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table.is-selectable td:first-child fw-checkbox,
+div.fw-data-table-container div.fw-data-table-scrollable table.fw-data-table.is-selectable th:first-child fw-checkbox {
+  display: block;
+  width: 16px;
+  height: 20px;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable.loading {
+  opacity: 0.65;
+}
+
+div.fw-data-table-container div.fw-data-table-scrollable.shimmer {
+  overflow: hidden;
+}
+
+div.fw-data-table-container .fw-data-table--loading {
+  position: absolute;
+  inset-block-start: 0px;
+  inset-inline-start: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+div.fw-data-table-container .table-settings {
+  position: absolute;
+  inset-inline-end: 0px;
+  inset-block-start: 0px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-button {
+  width: 40px;
+  min-height: 44px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid #ebeff3;
+  border-end-start-radius: 0px;
+  border-end-end-radius: 0px;
+  border-start-end-radius: 4px;
+  border-start-start-radius: 0px;
+  margin: 0px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-button:focus, div.fw-data-table-container .table-settings .table-settings-container .table-settings-button:hover {
+  cursor: pointer;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-button:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options {
+  z-index: 99;
+  width: 500px;
+  box-sizing: border-box;
+  background: #fff;
+  border: 1px solid #ebeff3;
+  border-radius: 4px;
+  padding-inline-start: 0px;
+  padding-block-end: 0px;
+  padding-inline-end: 0px;
+  padding-block-start: 22px;
+  display: none;
+  animation: appear 0.3s;
+}
+
+:host(:not([dir="rtl"])) div.fw-data-table-container .table-settings .table-settings-container .table-settings-options, :host([dir="ltr"]) div.fw-data-table-container .table-settings .table-settings-container .table-settings-options {
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+:host([dir="rtl"]) div.fw-data-table-container .table-settings .table-settings-container .table-settings-options {
+  box-shadow: 15px 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options.show {
+  display: block;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-header {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: 600;
+  align-items: flex-end;
+  padding-inline: 22px;
+  padding-block: 0px;
+  margin-block-end: 16px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-header span.title {
+  flex-grow: 1;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-header button.reset {
+  flex-grow: 0;
+  color: #2c5cc5;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 17px;
+  padding-inline-end: 4px;
+  margin: 0px;
+  background: #fff;
+  border: 0px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-header button.reset:focus, div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-header button.reset:hover {
+  cursor: pointer;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content {
+  display: flex;
+  width: 100%;
+  height: 342px;
+  box-sizing: border-box;
+  padding-inline: 22px;
+  padding-block: 0px;
+  gap: 14px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 220px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-title {
+  box-sizing: border-box;
+  padding-block-end: 5px;
+  padding-inline-start: 5px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-search {
+  position: relative;
+  inset-block-start: -3px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-block-start: 14px;
+  overflow-y: hidden;
+  width: calc(100% + 5px);
+}
+
+:host(:not([dir="rtl"])) div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose, :host([dir="ltr"]) div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose {
+  transform: translateX(-3px);
+}
+
+:host([dir="rtl"]) div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose {
+  transform: translateX(3px);
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose .table-settings-content-checkboxes {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-inline-start: 5px;
+  padding-inline-end: 5px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose .table-settings-content-checkboxes div {
+  margin-inline: 0px;
+  margin-block: 5px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-left .table-settings-content-choose .table-settings-content-checkboxes div fw-checkbox {
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  box-sizing: border-box;
+  background: #ebeff3;
+  border-end-start-radius: 0px;
+  border-end-end-radius: 0px;
+  border-start-end-radius: 4px;
+  border-start-start-radius: 4px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-title {
+  box-sizing: border-box;
+  padding-block-end: 3px;
+  padding-inline: 12px;
+  padding-block-start: 8px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable {
+  width: 100%;
+  flex-grow: 1;
+  padding-inline: 12px;
+  padding-block: 0px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item {
+  display: flex;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px rgba(18, 52, 77, 0.06);
+  border: 1px solid #ebeff3;
+  padding-inline-start: 14px;
+  padding-block-end: 7px;
+  padding-inline-end: 8px;
+  padding-block-start: 7px;
+  margin-inline: 0px;
+  margin-block: 8px;
+  font-size: 14px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-icon,
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-close {
+  width: 16px;
+  flex-grow: 0;
+  text-align: center;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-icon:focus, div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-icon:hover,
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-close:focus,
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-close:hover {
+  cursor: pointer;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-icon.non-drag:hover,
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-icon.non-drag:focus {
+  cursor: default;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-icon {
+  width: 9px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-close {
+  background: #fff;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-text {
+  flex-grow: 1;
+  color: #12344d;
+  padding-inline: 11px;
+  padding-block: 0px;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-text:hover, div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-right .table-settings-content-draggable .table-settings-drag-item .table-settings-drag-item-text:focus {
+  cursor: default;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-content .table-settings-content-title {
+  font-size: 14px;
+  line-height: 20px;
+  color: #475867;
+  font-weight: 600;
+}
+
+div.fw-data-table-container .table-settings .table-settings-container .table-settings-options .table-settings-footer {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f5f7f9;
+  padding-inline: 16px;
+  padding-block: 12px;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+@media (prefers-reduced-motion) {
+  div.fw-data-table-container .table-settings .table-settings-container .table-settings-options {
+    animation: none;
+  }
+}
+
+div.fw-data-table-container .table-settings .table-settings-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  inset-block-start: 0px;
+  inset-inline-start: 0px;
+  z-index: 95;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

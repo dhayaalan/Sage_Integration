@@ -1,0 +1,103 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/**
+* @prop --fw-skeleton-height: Skeleton height: Default: 16px for the text and rect, 32px for the circle
+* @prop --fw-skeleton-width: Skeleton width: Default: 100% for the text and rect, 32px for the circle
+* @prop --fw-skeleton-margin-bottom: Skeleton margin-bottom: Default: 8px/0px(when count is 1)
+* @prop --fw-skeleton-border-radius: Skeleton border-radius: Default: 999px for the text, 50% for the circle, 0px for the rect
+* @prop --fw-skeleton-background: Skeleton background: Default: #cfd7df
+* @prop --fw-skeleton-sheen-color: Skeleton Sheen effect color: Default: #b1bdc8
+*/
+.skeleton {
+  box-sizing: border-box;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  background: var(--fw-skeleton-background, #cfd7df);
+  border-radius: var(--fw-skeleton-border-radius, 999px);
+  width: var(--fw-skeleton-width, 100%);
+  height: var(--fw-skeleton-height, 16px);
+  display: block;
+  margin-block-end: var(--fw-skeleton-margin-bottom, 8px);
+  will-change: auto;
+}
+
+.skeleton:after, .skeleton:before {
+  box-sizing: border-box;
+}
+
+.skeleton.circle {
+  width: var(--fw-skeleton-width, 32px);
+  height: var(--fw-skeleton-height, 32px);
+  margin-block-end: var(--fw-skeleton-margin-bottom, 8px);
+  border-radius: var(--fw-skeleton-border-radius, 50%);
+}
+
+.skeleton.rect {
+  border-radius: var(--fw-skeleton-border-radius, 0px);
+}
+
+.skeleton.only {
+  margin-block-end: var(--fw-skeleton-margin-bottom, 0px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton.pulse, .skeleton.sheen {
+    animation: none;
+  }
+}
+
+.skeleton.pulse {
+  animation: pulse 2s ease-in-out 0.5s infinite;
+}
+
+:host(:not([dir="rtl"])) .skeleton.sheen, :host([dir="ltr"]) .skeleton.sheen {
+  background: linear-gradient(270deg, var(--fw-skeleton-sheen-color, #b1bdc8), var(--fw-skeleton-background, #cfd7df), var(--fw-skeleton-background, #cfd7df), var(--fw-skeleton-sheen-color, #b1bdc8));
+  animation: sheen-ltr 8s ease-in-out infinite;
+}
+
+:host([dir="rtl"]) .skeleton.sheen {
+  background: linear-gradient(-270deg, var(--fw-skeleton-sheen-color, #b1bdc8), var(--fw-skeleton-background, #cfd7df), var(--fw-skeleton-background, #cfd7df), var(--fw-skeleton-sheen-color, #b1bdc8));
+  animation: sheen-rtl 8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes sheen-ltr {
+  0% {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes sheen-rtl {
+  0% {
+    background-position: -100% 0;
+  }
+
+  to {
+    background-position: 300% 0;
+  }
+}

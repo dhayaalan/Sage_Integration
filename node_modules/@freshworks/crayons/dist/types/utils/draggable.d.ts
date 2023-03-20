@@ -1,0 +1,34 @@
+export declare class Draggable {
+  dragContainer: HTMLElement;
+  options: any;
+  childElements: any[];
+  acceptFrom: any[];
+  placeholder: HTMLElement;
+  nextSibling: HTMLElement;
+  previousContainer: any;
+  cancelDebouncedDrag: any;
+  dropped: boolean;
+  debouncedSetElement: (...args: any[]) => void;
+  constructor(container: any, options: any);
+  private onDragStart;
+  private onDragEnter;
+  private onDragLeave;
+  private onDragOver;
+  private onDragEnd;
+  private onDrop;
+  addListeners(): void;
+  removeListeners(): void;
+  getDragAfterElement(elements: any, y: any): any;
+  createPlaceholder(sourceElement: any): any;
+  removePlaceholder(): void;
+  addElement(newElement: any, nextElement: any): void;
+  canAcceptDragElement(): boolean;
+  canInsertBefore(element: any): boolean;
+  canAppendTo(container: any): boolean;
+  getHost(element: any): any;
+  getMatchingHost(element: any, tagName: any): any;
+  resetData(e: any): void;
+  getElementHeight(element: any): number;
+  getElementWidth(element: any): number;
+  destroy(): void;
+}

@@ -1,0 +1,280 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+:host {
+  display: inline-block;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .fw-toggle-card-button,
+.fw-toggle-card-button-tick,
+.fw-toggle-icon-button {
+    transition: none;
+  }
+}
+/**
+  @prop --fw-toggle-group-button-card-width: width of the card.
+  @prop --fw-toggle-group-button-card-height: height of the content.
+  @prop --fw-toggle-group-button-card-description-max-height: maximum height for the description text.
+  @prop --fw-toggle-group-button-card-description-max-lines: maximum lines that can be displayed for description text.
+  @prop --fw-toggle-group-button-icon-button-width: defines the width of the icon toggle button - default is 42px
+  @prop --fw-toggle-group-button-icon-button-height: defines the height of the icon toggle button - default is 36px
+*/
+.fw-toggle-card-button {
+  width: var(--fw-toggle-group-button-card-width, 240px);
+  height: var(--fw-toggle-group-button-card-height, 112px);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  outline: 0;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff;
+  border: 1px solid #cfd7df;
+  box-shadow: inset 0px 1px 2px rgba(24, 50, 71, 0.05);
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.fw-toggle-card-button .fw-toggle-card-button-header {
+  width: 100%;
+  pointer-events: none;
+  user-select: none;
+  line-height: 20px;
+  text-align: start;
+  color: #12344d;
+  font-size: 16px;
+  font-weight: 600;
+  margin-block-end: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+.fw-toggle-card-button .fw-toggle-card-button-description {
+  width: 100%;
+  margin: 0;
+  pointer-events: none;
+  user-select: none;
+  text-align: start;
+  color: #475867;
+  font-size: 14px;
+  font-weight: 400;
+  word-break: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  max-height: var(--fw-toggle-group-button-card-description-max-height, 48px);
+  -webkit-line-clamp: var(--fw-toggle-group-button-card-description-max-lines, 3);
+  -webkit-box-orient: vertical;
+}
+
+.fw-toggle-card-button .fw-toggle-card-button-tick {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  inset-block-start: -8px;
+  inset-inline-end: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  background-color: #2c5cc5;
+  transition: opacity 0.3s;
+  opacity: 1;
+}
+
+.fw-toggle-card-button:hover {
+  background: #ebeff3;
+}
+
+.fw-toggle-card-button:focus {
+  border: 1px solid #e5f2fd;
+  box-shadow: 0 0 0 1px #e5f2fd;
+}
+
+.fw-toggle-card-button--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.fw-toggle-card-button--selected {
+  background: #e5f2fd;
+  border: 1px solid #bbdcfe;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+.fw-toggle-card-button--selected .fw-toggle-card-button-tick {
+  opacity: 1;
+}
+
+.fw-toggle-card-button--selected--checkbox {
+  cursor: pointer;
+}
+
+.fw-toggle-card-button--selected--checkbox:hover {
+  background: #e5f2fd;
+  border: 1px solid #bbdcfe;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+.fw-toggle-card-button--selected--checkbox:hover .fw-toggle-card-button-tick {
+  opacity: 0.5;
+}
+
+.fw-toggle-card-button--selected--checkbox:active {
+  background: #e5f2fd;
+  border: 1px solid #bbdcfe;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+.fw-toggle-card-button--selected--checkbox:active .fw-toggle-card-button-tick {
+  opacity: 0.1;
+}
+
+.fw-toggle-card-button--selected--checkbox:focus {
+  background: #e5f2fd;
+  border: 1px solid #bbdcfe;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+.fw-toggle-card-button--selected--checkbox:focus .fw-toggle-card-button-tick {
+  opacity: 1;
+}
+
+.fw-toggle-card-button--selected--radio {
+  cursor: unset;
+  pointer-events: none;
+}
+
+.fw-toggle-card-button--selected--radio:hover {
+  background: #e5f2fd;
+  border: 1px solid #bbdcfe;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+.fw-toggle-card-button--selected--radio:focus {
+  background: #e5f2fd;
+  border: 1px solid #bbdcfe;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+.fw-toggle-icon-button {
+  width: var(--fw-toggle-group-button-icon-button-width, 42px);
+  height: var(--fw-toggle-group-button-icon-button-height, 36px);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: 0;
+  padding: 0;
+  border: 1px solid #cfd7df;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+:host(:not([dir="rtl"])) .fw-toggle-icon-button, :host([dir="ltr"]) .fw-toggle-icon-button {
+  background: linear-gradient(180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+:host([dir="rtl"]) .fw-toggle-icon-button {
+  background: linear-gradient(-180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+.fw-toggle-icon-button:hover {
+  background: #f5f7f9;
+}
+
+.fw-toggle-icon-button:focus {
+  border: 2px solid #2c5cc5;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+:host(:not([dir="rtl"])) .fw-toggle-icon-button:focus, :host([dir="ltr"]) .fw-toggle-icon-button:focus {
+  background: linear-gradient(180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+:host([dir="rtl"]) .fw-toggle-icon-button:focus {
+  background: linear-gradient(-180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+.fw-toggle-icon-button--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.fw-toggle-icon-button--selected {
+  border: 2px solid #2c5cc5;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+:host(:not([dir="rtl"])) .fw-toggle-icon-button--selected, :host([dir="ltr"]) .fw-toggle-icon-button--selected {
+  background: linear-gradient(180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+:host([dir="rtl"]) .fw-toggle-icon-button--selected {
+  background: linear-gradient(-180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+.fw-toggle-icon-button--selected--checkbox {
+  cursor: pointer;
+}
+
+.fw-toggle-icon-button--selected--checkbox:hover {
+  background: #f5f7f9;
+}
+
+.fw-toggle-icon-button--selected--checkbox:focus {
+  border: 2px solid #2c5cc5;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+:host(:not([dir="rtl"])) .fw-toggle-icon-button--selected--checkbox:focus, :host([dir="ltr"]) .fw-toggle-icon-button--selected--checkbox:focus {
+  background: linear-gradient(180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+:host([dir="rtl"]) .fw-toggle-icon-button--selected--checkbox:focus {
+  background: linear-gradient(-180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+.fw-toggle-icon-button--selected--radio {
+  cursor: unset;
+  pointer-events: none;
+}
+
+.fw-toggle-icon-button--selected--radio:hover {
+  border: 2px solid #2c5cc5;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+:host(:not([dir="rtl"])) .fw-toggle-icon-button--selected--radio:hover, :host([dir="ltr"]) .fw-toggle-icon-button--selected--radio:hover {
+  background: linear-gradient(180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+:host([dir="rtl"]) .fw-toggle-icon-button--selected--radio:hover {
+  background: linear-gradient(-180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+.fw-toggle-icon-button--selected--radio:focus {
+  border: 2px solid #2c5cc5;
+  box-shadow: 0px 1px 4px #ebeff3;
+}
+
+:host(:not([dir="rtl"])) .fw-toggle-icon-button--selected--radio:focus, :host([dir="ltr"]) .fw-toggle-icon-button--selected--radio:focus {
+  background: linear-gradient(180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}
+
+:host([dir="rtl"]) .fw-toggle-icon-button--selected--radio:focus {
+  background: linear-gradient(-180deg, #ffffff 2.56%, #f5f7f9 95.75%);
+}

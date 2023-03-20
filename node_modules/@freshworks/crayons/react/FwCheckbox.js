@@ -1,0 +1,8 @@
+// @ts-nocheck
+/* eslint-disable */
+/* tslint:disable */
+/* auto-generated react proxies */
+import { createReactComponent } from './react-component-lib';
+import { FwCheckbox as FwCheckboxCmp, defineCustomElement as defineCustomElementFwCheckbox } from '@freshworks/crayons/dist/components/fw-checkbox.js';
+export const FwCheckbox = /*@__PURE__*/ createReactComponent('fw-checkbox', undefined, undefined, FwCheckboxCmp, defineCustomElementFwCheckbox);
+//# sourceMappingURL=FwCheckbox.js.map

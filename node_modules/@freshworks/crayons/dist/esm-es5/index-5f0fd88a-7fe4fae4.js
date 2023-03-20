@@ -1,0 +1,1 @@
+var formatRelativeLocale={lastWeek:"eeee 'dernier à' p",yesterday:"'hier à' p",today:"'aujourd’hui à' p",tomorrow:"'demain à' p'",nextWeek:"eeee 'prochain à' p",other:"P"};var formatRelative=function e(a,r,t,o){return formatRelativeLocale[a]};export{formatRelative as f};

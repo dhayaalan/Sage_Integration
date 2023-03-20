@@ -1,0 +1,183 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* stylelint-disable a11y/media-prefers-reduced-motion */
+.modal-overlay {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  display: none;
+  z-index: 990;
+  background-color: rgba(18, 52, 77, 0.5);
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s linear;
+}
+
+.modal {
+  position: relative;
+  display: flex;
+  max-height: 70vh;
+  background: #fff;
+  box-shadow: 0px 2px 18px rgba(18, 52, 77, 0.2);
+  border-radius: 4px;
+  z-index: 999;
+  animation: "modal-entry" 0.5s 1;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.modal .modal-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .modal-container .content {
+  padding-block-end: 32px;
+  padding-inline: 32px;
+  padding-block-start: 0px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.modal .close-btn {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  color: #264966;
+  padding-inline: 6px;
+  padding-block: 4px;
+  min-width: 16px;
+  height: 24px;
+  position: absolute;
+  inset-block-start: 8px;
+  inset-inline-end: 8px;
+  transition: all 0.3s;
+  z-index: 1;
+}
+
+.modal .close-btn:hover, .modal .close-btn:focus {
+  background-color: #ebeff3;
+  border-radius: 4px;
+  border-color: #ebeff3;
+  cursor: pointer;
+}
+
+.standard {
+  width: 512px;
+}
+
+.small {
+  width: 424px;
+}
+
+.large {
+  width: 800px;
+}
+
+.modal-overlay.slider {
+  justify-content: flex-end;
+}
+
+.modal-overlay.slider .modal {
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0px;
+  width: 600px;
+}
+
+:host(:not([dir="rtl"])) .modal-overlay.slider .modal, :host([dir="ltr"]) .modal-overlay.slider .modal {
+  animation: "modal-entry-right-ltr" 0.5s 1;
+}
+
+:host([dir="rtl"]) .modal-overlay.slider .modal {
+  animation: "modal-entry-right-rtl" 0.5s 1;
+}
+
+.modal-overlay.slider .modal .close-btn {
+  height: 24px;
+  width: 24px;
+  box-sizing: border-box;
+  inset-block-start: 0px;
+  inset-inline-end: 600px;
+  background-color: #12344d;
+  border-end-start-radius: 2px;
+  border-end-end-radius: 0px;
+  border-start-end-radius: 0px;
+  border-start-start-radius: 2px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.modal-overlay.slider .modal .close-btn:hover, .modal-overlay.slider .modal .close-btn:focus, .modal-overlay.slider .modal .close-btn:focus-visible {
+  background-color: #12344d;
+  border-end-start-radius: 2px;
+  border-end-end-radius: 0px;
+  border-start-end-radius: 0px;
+  border-start-start-radius: 2px;
+  border-color: #12344d;
+  outline: 0px;
+}
+
+.modal-overlay.slider .modal .close-btn:focus, .modal-overlay.slider .modal .close-btn:focus-visible {
+  border: 1px solid #2c5cc5;
+  box-shadow: #2c5cc5 0px 0px 0px 1px;
+}
+
+.modal-overlay.slider .modal .close-btn fw-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.modal-overlay.slider .modal.small, .modal-overlay.slider .modal.standard, .modal-overlay.slider .modal.large {
+  width: 600px;
+}
+
+.visible {
+  display: flex;
+}
+
+@keyframes modal-entry {
+  0% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modal-entry-right-ltr {
+  0% {
+    transform: translateX(calc(100% - 520px));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes modal-entry-right-rtl {
+  0% {
+    transform: translateX(calc(-1*(100% - 520px)));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

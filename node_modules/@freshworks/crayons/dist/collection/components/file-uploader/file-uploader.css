@@ -1,0 +1,115 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/**
+  @prop --fw-file-uploader-border: border color for file uploader
+**/
+:host {
+  display: block;
+}
+
+div.file-uploader-container {
+  display: flex;
+  width: 100%;
+  min-height: 153px;
+  border: 1px dashed var(--fw-file-uploader-border, #bbdcfe);
+  background: #fff;
+  justify-content: center;
+}
+
+div.file-uploader-container .dropzone,
+div.file-uploader-container .progress,
+div.file-uploader-container .files {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
+
+div.file-uploader-container .dropzone {
+  align-items: center;
+  cursor: pointer;
+}
+
+div.file-uploader-container .dropzone .dropzone-center {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 100%;
+  justify-content: space-between;
+}
+
+div.file-uploader-container .dropzone .dropzone-center .drop-clickable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 0;
+  margin-block: auto;
+  transform: translateY(-5px);
+}
+
+div.file-uploader-container .dropzone .dropzone-center .drop-clickable .drop-clickable-text {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c5cc5;
+  margin-block-start: 9px;
+  margin-block-end: 3px;
+}
+
+div.file-uploader-container .dropzone .dropzone-center .drop-clickable .drop-clickable-hint {
+  line-height: 20px;
+  font-size: 14px;
+  color: #92a2b1;
+}
+
+div.file-uploader-container .dropzone .dropzone-center .dropzone-hint {
+  line-height: 20px;
+  font-size: 10px;
+  color: #345c7c;
+  text-align: center;
+}
+
+div.file-uploader-container .dropzone .dropzone-center .dropzone-error {
+  line-height: 12px;
+  font-size: 10px;
+  text-align: center;
+  padding-inline: 0px;
+  padding-block: 5px;
+  box-sizing: border-box;
+}
+
+div.file-uploader-container .dropzone .dropzone-center .dropzone-error span {
+  display: block;
+  color: #d72d30;
+}
+
+div.file-uploader-container .progress,
+div.file-uploader-container .files {
+  padding: 28px;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+div.file-uploader-container .progress-center,
+div.file-uploader-container .files-center {
+  display: flex;
+  flex-direction: column;
+}
+
+div.file-uploader-container .progress-title,
+div.file-uploader-container .files-title {
+  line-height: 20px;
+  font-size: 12px;
+  color: #475867;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}

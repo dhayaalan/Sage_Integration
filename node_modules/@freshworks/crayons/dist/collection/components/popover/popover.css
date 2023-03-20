@@ -1,0 +1,75 @@
+/* Need to check with designer */
+/* Need to check with designer */
+:host {
+  font-family: var(--fw-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/**
+  @prop --fw-popover-min-width: Minimum width of the popover content.
+  @prop --fw-popover-max-width: Maximum width of the popover content.
+  @prop --fw-popover-min-height: Minimum height of the popover content.
+  @prop --fw-popover-max-height: Maximum height of the popover content.
+  @prop --fw-popover-border-radius: border radius of the popover content.
+*/
+.popper-content {
+  display: none;
+  z-index: 99;
+  min-width: var(--fw-popover-min-width);
+  max-width: var(--fw-popover-max-width);
+  min-height: var(--fw-popover-min-height, 10px);
+  max-height: var(--fw-popover-max-height, 400px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior-y: contain;
+  margin: 0px;
+  border-radius: var(--fw-popover-border-radius, 8px);
+  border: 1px solid #ebeff3;
+  position: absolute;
+  background: #fff;
+  box-sizing: border-box;
+  outline: none;
+  user-select: none;
+  transform: scale(0.01);
+  transition: 150ms color, 150ms border, 150ms box-shadow;
+  will-change: auto;
+}
+
+:host(:not([dir="rtl"])) .popper-content, :host([dir="ltr"]) .popper-content {
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+:host([dir="rtl"]) .popper-content {
+  box-shadow: 15px 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+.popper-content.no-border {
+  border: 0px;
+}
+
+.popper-content.no-transition {
+  transition: none;
+}
+
+.popper-content[data-show] {
+  display: block;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: 95;
+  background-color: transparent;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .popper-content {
+    transition: none;
+  }
+}
