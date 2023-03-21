@@ -51,14 +51,16 @@
               <fw-checkbox
                 class="myCheckbox"
                 description="Freshsales to sage"
-                id="check-box"
-                onclick=checkHandler()
-                >Freshsales - Sage
+                id="check-box1"
+                onclick="checkHandler()"
+              >
+                Freshsales - Sage
               </fw-checkbox>
               <fw-checkbox
-                class="myCheckbox1"
+                class="myCheckbox"
                 description="Sage to Freshsales"
-                class="check-box"
+                id="check-box2"
+                onclick="checkHandle()"
                 >Sage - Freshsales </fw-checkbox
               ><br /><br />
             </div>
@@ -160,7 +162,6 @@
     <!-- </div> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
-    <!-- <script src="node_modules/@freshworks/crayons/dist/crayons/crayons.js"></script> -->
     <script src="./assets/iparams.js"></script>
     <script type="text/javascript">
       var ls = {
@@ -192,18 +193,6 @@
           //  init();
           // $("body").live('click' , init);
           // $(window).on('load' , init);
-
-         
-          checkbox.addEventListener('fwChange', (event) => {});
-
-          const checkbox1 = document.querySelector('#myCheckbox1');
-          checkbox1.addEventListener('fwChange', (eve) => {
-            if (eve.currentTarget.checked) {
-              console.log('success', eve);
-            } else {
-              console.log('error', eve);
-            }
-          });
         });
       });
     </script>
