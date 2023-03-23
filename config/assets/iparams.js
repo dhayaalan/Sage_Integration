@@ -1,10 +1,10 @@
 function checkHandler() {
   // const checkbox = document.getElementsByClassName('myCheckbox');
   //check-box
-  const checkbox = document.getElementById('check-box1');
+  const checkbox1 = document.getElementById('check-box1');
 
   console.log('checkbox');
-  if (!checkbox.checked == true) {
+  if (!checkbox1.checked == true) {
     console.log('success');
   } else {
     console.log('error');
@@ -14,10 +14,10 @@ function checkHandler() {
 function checkHandle() {
   // const checkbox = document.getElementsByClassName('myCheckbox');
   //check-box
-  const checkbox = document.getElementById('check-box2');
+  const checkbox2 = document.getElementById('check-box2');
 
   console.log('checkbox');
-  if (!checkbox.checked == true) {
+  if (!checkbox2.checked == true) {
     console.log('success');
   } else {
     console.log('error');

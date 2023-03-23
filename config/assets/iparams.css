@@ -21,11 +21,10 @@ body *:not(i) {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 .post-config-accounts-header-refresh {
   display: flex;
-
+  /* width: 150px; */
 }
 
 .post-config-accounts-header-refresh-heading {
@@ -264,7 +263,3 @@ body *:not(i) {
   outline: none;
 }
 
-.myCheckbox {
-  width: 276px;
-  height: 18px;
-}

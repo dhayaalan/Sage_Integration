@@ -1,200 +1,211 @@
 <html>
-  <head>
-    <title>Sage</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://static.freshdev.io/fdk/2.0/assets/freshworks_crm.css"
-    />
-    <link rel="stylesheet" type="text/css" href="./assets/iparams.css" />
-    <script
-      type="module"
-      src="https://unpkg.com/@freshworks/crayons@2/dist/crayons/crayons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/@freshworks/crayons@2/dist/crayons/crayons.js"
-    ></script>
-    <style>
-      /* Put your custom style here */
-    </style>
-  </head>
 
-  <body>
-    <div>
-      <fw-tabs id="tabs">
-        <fw-tab
-          tab-header="Contact Freshsales"
-          id="tab1"
-          class="tabs"
-          active-tab-index="0"
-        >
-          <div class="post-config-accounts">
-            <div class="post-config-accounts-header">
-              <h4 class="post-config-accounts-header-heading">
-                Contact Field Mapping
-              </h4>
+<head>
+  <title>Sage</title>
+  <link rel="stylesheet" type="text/css" href="https://static.freshdev.io/fdk/2.0/assets/freshworks_crm.css" />
+  <link rel="stylesheet" type="text/css" href="./assets/iparams.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  <script type="module" src="https://unpkg.com/@freshworks/crayons@2/dist/crayons/crayons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/@freshworks/crayons@2/dist/crayons/crayons.js"></script>
+  <style>
+    /* Put your custom style here */
+  </style>
+</head>
 
-              <div class="post-config-accounts-header-refresh">
-                <img
-                  src="./assets/img/cycle.svg"
-                  alt=""
-                  class="post-config-accounts-header-refresh-img"
-                />
-                <h4 class="post-config-accounts-header-refresh-heading">
-                  Refresh list fields
-                </h4>
+<body>
+  <fw-tabs id="tabs">
+    <fw-tab tab-header="Contact Freshslaes">
+      <div class="post-config-accounts">
+        <div class="post-config-accounts-header">
+          <h4 class="post-config-accounts-header-heading">
+            Review deals field mapping
+          </h4>
+          <div class="post-config-accounts-header-refresh">
+            <img src="./assets/img/cycle.svg" alt="" class="post-config-accounts-header-refresh-img" />
+            <h4 class="post-config-accounts-header-refresh-heading">
+              Refresh list fields
+            </h4>
+          </div>
+        </div>
+        <div>
+          <fw-checkbox class='check-box' id='check-box1' onclick='checkHandler()'>
+            Freshsales - Sage
+          </fw-checkbox>
+          <br />
+          <fw-checkbox class='check-box' id='check-box2' onclick='checkHandle()'>
+            Sage - Freshsales
+          </fw-checkbox>
+          <br />
+        </div>
+        <div class="post-config-main">
+          <div class="post-config-main-header">
+            <h3 class="post-config-main-header-zoomFields">Freshsale Field</h3>
+            <h3 class="post-config-main-header-direction">
+              Direction
+            </h3>
+            <h3 class="post-config-main-header-fieldUpdateReference">
+              Sage Field
+            </h3>
+          </div>
+          <div class="post-config-err">
+            <div class="post-config-main-error">
+              <div class="post-config-main-error-icon">
+                <img src="./assets/img/alert-circle.svg" alt="" class="post-config-main-error-icon-img" />
+              </div>
+              <div class="post-config-main-error-content">
+                <span>The following</span>
+                <span class="post-config-main-error-content-required">required fields
+                  <img src="./assets/img/Triangle.svg" alt="" onclick="notify('Fill the required field','error')" />
+                </span>
+                <span>in Freshsales must be mapped to a Sage field</span>
               </div>
             </div>
-            <br />
-            <div>
-              <fw-checkbox
-                class="myCheckbox"
-                description="Freshsales to sage"
-                id="check-box1"
-                onclick="checkHandler()"
-              >
-                Freshsales - Sage
-              </fw-checkbox>
-              <fw-checkbox
-                class="myCheckbox"
-                description="Sage to Freshsales"
-                id="check-box2"
-                onclick="checkHandle()"
-                >Sage - Freshsales </fw-checkbox
-              ><br /><br />
-            </div>
-            <div class="post-config-main">
-              <div class="post-config-main-header">
-                <h3 class="post-config-main-header-zoomFields">
-                  FRESHSALES FIELDS
-                </h3>
-                <h3 class="post-config-main-header-direction">DIRECTION</h3>
-                <h3 class="post-config-main-header-freshsalesFields">
-                  SAGE FIELDS
-                </h3>
-                <div class="post-config-main-error-required-fields hidden">
-                  <img
-                    src="./assets/img/trianglerequired.svg"
-                    alt=""
-                    class="triangle-required"
-                  />
-                  <div class="post-config-main-error-missing-fields">
-                    <div class="post-config-main-error-missing-fields-header">
-                      <h4 class="post-config-main-error-missing-fields-text">
-                        Required Freshsales Fields
-                      </h4>
-                      <img
-                        src="./assets/img/close-icon.svg"
-                        alt=""
-                        class="post-config-main-error-missing-fields-close"
-                      />
-                    </div>
-                    <ul class="post-config-accounts-required">
-                      <li>Account ID</li>
-                      <li>Name</li>
-                    </ul>
-                  </div>
+            <div class="post-config-main-error-required-fields hidden">
+              <img src="./assets/img/trianglerequired.svg" alt="" class="triangle-required" />
+              <div class="post-config-main-error-missing-fields">
+                <div class="post-config-main-error-missing-fields-header">
+                  <h4 class="post-config-main-error-missing-fields-text">
+                    Required Freshsales Fields
+                  </h4>
                 </div>
+                <ul class="post-config-accounts-required">
+                </ul>
               </div>
-              <div class="account-fields-page" id="account-fields-page">
-                <div class="account-field">
-                  <div class="account-field-left">
-                    <img
-                      src="./assets/img/closeblack.svg"
-                      alt=""
-                      class="account-field-minus"
-                    />
-                    <select
-                      label=""
-                      required="true"
-                      value="1"
-                      placeholder="Zoominfo Field"
-                      hint-text=""
-                      class="accounts-field-item-1"
-                    >
-                      <option value="1">Account</option>
-                      <option value="2">ID</option>
-                    </select>
-                  </div>
+            </div>
+          </div>
 
+
+          <div class="account-fields-page" id="account-fields-page">
+            <div class="account-field">
+              <div class="account-field-left">
+                <img src="./assets/img/closeblack.svg" alt="" class="account-field-minus" id="remove"
+                  onclick="chooseMethod()" />
+                <select id="conatct-field-1" label="" required="true" value="1" placeholder="Sage Field" hint-text=""
+                  class="accounts-field-item-1">
+                  <option value="1">Account</option>
+                  <option value="2">ID</option>
+                  <option value="3">NAME</option>
+                </select>
+              </div>
+              <img src="./assets/img/Arrow.svg" alt="" class="account-field-arrow" />
+              <select id="contact-field-2" label="" required="true" value="1" placeholder="Sage Field" hint-text=""
+                class="accounts-field-item">
+                <option value="1">Account</option>
+                <option value="2">ID</option>
+                <option value="3">NAME</option>
+              </select>
+            </div>
+            <div id="append-contact"></div>
+          </div>
+          <div id="add-accounts-field-mapping" class="post-config-add-field-mapping">
+            <img src="./assets/img/addfields.svg" alt="" class="post-config-add-field-mapping-img"
+              onclick="contactFields()" />
+            <p class="post-config-add-field-mapping-text" onclick="contactFields()">
+              Add field Mapping
+            </p>
+          </div>
+        </div>
+        <div class="post-config-footer">
+          <button class="post-config-footer-save-btn accounts-save-btn">
+            Save mapping
+          </button>
+          </script>
+        </div>
+      </div>
+    </fw-tab>
+  </fw-tabs>
+  <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="./assets/iparams.js"></script>
+  <script type="text/javascript">
+    var elements = {
+      // addAccountsFieldMapping : "#add-accounts-field-mapping",
+      accountsFieldMappingPage: "#account-fields-page",
+      contact_field1: "#contact-field-1",
+      contact_fields2: "#conatct-field-2",
+      append_contact: "#append-contact",
+    }
+    function getConfigs(configs) {
+      //write your code here
+    }
+    function validate() {
+      let isValid = true;
+      //write your code here
+      return isValid;
+    }
+    function postConfigs() {
+      //write your code here
+    }
+    //       function addFieldMapping(){
+    //         console.log("Raja");
+    //       let {addAccountsFieldMapping} = elements;
+    //     document.querySelector(addAccountsFieldMapping).addEventListener('click' , appendAccountFields);
+    // }
+    function contactFields() {
+      console.log("raja 2");
+      let accountsFieldMappingPage;
+      let contact_field1;
+      let contact_field2;
+      let html = ""
+      html += ` <div class="account-field">
+                <div class="account-field-left">
                   <img
-                    src="./assets/img/Arrow.svg"
+                    src="./assets/img/closeblack.svg"
                     alt=""
-                    class="account-field-arrow"
+                    class="account-field-minus"
+                    id = "minus"
+                    onclick="chooseMethod()"
                   />
                   <select
+                  id="contact-field-1"
                     label=""
                     required="true"
                     value="1"
-                    placeholder="Zoominfo Field"
+                    placeholder="Sage Field"
                     hint-text=""
-                    class="accounts-field-item"
+                    class="accounts-field-item-1"
                   >
                     <option value="1">Account</option>
                     <option value="2">ID</option>
+                    <option value="3">NAME</option>
                   </select>
                 </div>
-              </div>
-              <div
-                id="add-accounts-field-mapping"
-                class="post-config-add-field-mapping"
-              >
-                <img
-                  src="./assets/img/addfields.svg"
-                  alt=""
-                  class="post-config-add-field-mapping-img"
-                />
-                <p class="post-config-add-field-mapping-text">
-                  Add field Mapping
-                </p>
-              </div>
-            </div>
-            <div class="post-config-footer">
-              <button class="post-config-footer-save-btn accounts-save-btn">
-                Save mapping
-              </button>
-            </div>
-          </div>
-        </fw-tab>
-      </fw-tabs>
-    </div>
-    <!-- </div> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="https://static.freshdev.io/fdk/2.0/assets/fresh_client.js"></script>
-    <script src="./assets/iparams.js"></script>
-    <script type="text/javascript">
-      var ls = {
-        isValid: false,
-        isFsValid: false,
-      };
+                <img src="./assets/img/Arrow.svg" alt="" class="account-field-arrow" />
+                <select
+                id="contact-field-2"
+                  label=""
+                  required="true"
+                  value="1"
+                  placeholder="Sage Field"
+                  hint-text=""
+                  class="accounts-field-item"
+                >
+                  <option value="1">Account</option>
+                  <option value="2">ID</option>
+                  <option value="3">NAME</option>
+                </select>
+              </div>`;
+      $(elements.append_contact).append(html)
 
-      var elements = {
-        addAccountsFieldMapping: '#add-accounts-field-mapping',
-        accountsFieldMappingPage: '#account-fields-page',
-      };
-      function getConfigs(configs) {
-        //write your code here
+    }
+
+    function remove(e) {
+      console.log("Ee", e.target);
+      let elementChild = e.target.parentElement.parentElement;
+      let elementParent = e.target.parentElement.parentElement.parentElement;
+      console.log("Ee", elementChild, elementParent, e.target.parentElement);
+      elementChild.parentNode.removeChild(elementChild);
+    }
+
+    function chooseMethod() {
+      let accountDeleteField = document.querySelectorAll(".account-field-minus");
+      for (let i = 0; i < accountDeleteField.length; i++) {
+        console.log('remove');
+        accountDeleteField[i].addEventListener('click', remove);
       }
+    }
+  </script>
+</body>
 
-      function validate() {
-        let isValid = true;
-        //write your code here
-        return isValid;
-      }
-
-      function postConfigs() {
-        //write your code here
-      }
-
-      $(document).ready(function () {
-        app.initialized().then(function (client) {
-          window.client = client;
-          //  init();
-          // $("body").live('click' , init);
-          // $(window).on('load' , init);
-        });
-      });
-    </script>
-  </body>
 </html>
